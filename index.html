@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Sitio html5</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link rel="stylesheet" href="resources/css/estilos.css" />
+<script src="resources/js/jquery-3.2.1.min.js"></script>
+<script src="resources/js/myscript.js"></script>
+</head>
+<body>
+<div id="container">
+	<header id="menu">
+		<!--Tiene un título que sirve para indexación pero que no será visible-->
+		<h1 id="logo">M DE MUJER - sobre deporte e igualdad</h1>
+		<nav>
+			<ul id="iconos"> 
+				<li><a href="#menu">Abrir</a></li>
+				<li><a href="#">Cerrar</a></li>
+			</ul>
+			<ul id="botones">
+				<li><a href="#" id="inicio">INICIO</a></li>
+				<li><a href="#noticias">NOTICIAS</a></li>
+				<li><a href="#notas">NOTAS</a></li>
+				<li><a href="#contacto">CONTACTO</a></li>
+			</ul>
+		</nav>
+	</header>
+	<main>
+		<section id="banner"> <!--Para un banner no publicitario, sino relacionado a la temática de la página-->
+			<ul>
+				<li id="cinco"> <!--Utilizo la etiqueta picture para poder cargar imágenes de distintas definiciones y hacerlo responsive-->
+					<picture>
+						<source srcset="resources/img/banner5.jpg" media="(min-width: 600px)" />
+						<img src="resources/img/banner5_599.jpg" alt="Imagen que muestra una conferencia de la organización ONU Mujeres junto al Comité Olímpico Internacional" />
+					</picture>
+				</li>
+				<li id="cuatro">
+					<picture>
+						<source srcset="resources/img/banner4.jpg" media="(min-width: 600px)" />
+						<img src="resources/img/banner4_599.jpg" alt="Fotografía de la primera competidora saudita en atletismo en los Juegos Olímpicos de Londres 2012" />
+					</picture>
+				</li>
+				<li id="tres">
+					<picture>
+						<source srcset="resources/img/banner3.jpg" media="(min-width: 600px)" />
+						<img src="resources/img/banner3_599.jpg" alt="Fotografía de dos jugadoras de volley" />
+					</picture>
+				</li>
+				<li id="dos">
+					<picture>
+						<source srcset="resources/img/banner1.jpg" media="(min-width: 600px)" />
+						<img src="resources/img/banner2_599.jpg" alt="Fotografía de la ganadora olímpica de natación del año 2012" />
+					</picture>
+				</li>
+				<li id="uno">
+					<picture>
+						<source srcset="resources/img/banner1.jpg" media="(min-width: 600px)" />
+						<img src="resources/img/banner1_599.jpg" alt="Fotografía de todo el equipo de volley de la ciudad de Tucumán, Argentina" />
+					</picture>
+				</li>
+			</ul>
+		</section>
+		<section id="noticias"> <!--Sección "noticia del día" que contiene el artículo principal de la página-->
+			<h2>NOTICIA DEL DÍA</h2>
+			<article>
+				<h3>No habrá deporte para las mujeres de Arabia Saudí</h3>
+				<h4>El país rechaza fundar universidades de educación deportiva femenina por considerar que el ejercicio físico en mujeres es "desvergonzado".</h4>
+				<div> <!--Este div será utilizado para utilizar flexbox en la versión mobile-->
+				<div class="media-wrapper right">
+					<figure class="media video">
+						<iframe id="video1" src="https://www.youtube.com/embed/LKVYB2_-VzA" allowfullscreen></iframe>
+						<figcaption>Nota de <a href="http://www.dw.com/es">DW - en Español</a>. Nov 2012.</figcaption>
+					</figure>
+					<figure class="media video">
+						<iframe id="video2" src="https://www.youtube.com/embed/uOBKzWIOnag" allowfullscreen></iframe>
+						<figcaption>Nota de <a href="http://cctv.cntv.cn/lm/cctvamerica/">CCTV - America</a> a Sarah Attar.<br>Juegos Olímpicos de Londres 2012.</figcaption>
+					</figure>
+					<div class="media">
+						<figure class="left">
+							<img src="resources/img/foto1.jpg" alt="Foto de una adolescente saudita jugando al fúbtol" />
+							<figcaption>Por <a href="http://www.futbolrebelde.org/blog/">Fútbol Rebelde</a></figcaption>
+						</figure>
+						<figure class="right">
+							<img src="resources/img/foto2.jpg" alt="Foto de Sarah Attar, primera participante saudita en atletismo en los Juegos Olímpicos de Londres 2012" />
+							<figcaption>Sarah Attar.<br>Londres 2012.</figcaption>
+						</figure>
+					</div>
+				</div>
+				<div>
+					<p>Arabia Saudita es una monarquía constitucional, sin elecciones ni partidos políticos, por lo que <em>su órgano legislativo está conformado por hombres nombrados por el rey, así como los demás puestos gubernamentales que por regla general recaen en miembros de la familia real.</em> Su constitución es el Libro Sagrado del Corán por lo que su ley es la Sharia o ley musulmana, aplicada en sus tribunales. <strong>Por esta razón, las mujeres tienen muy poca participación en la vida política, económica y social del país.</strong></p>
+					<p>La vida deportiva no es una excepción.<em> Los clérigos ultraconservadores que lideran y toman muchas de las decisiones en el país sostienen que el deporte desdibuja las líneas de género y asemejan la figura femenina a la del hombre, y que por ese motivo es "inadmisible" el deporte femenino.</em><strong> Con base en estas reflexiones, el país ha prohibido la práctica de deportes a las mujeres y ha abierto una investigación a las escuelas sospechadas de participar en estas "actividades ilícitas".</strong> La investigación está siendo realizada por el Ministerio de Educación, que revisa las denuncias hacia 6 escuelas femeninas de la ciudad de Jedda por haber participado en competencias deportivas.</p>
+					<p><strong>En un intento político por evitar las críticas internacionales, el país ha permitido a las mujeres participar de los juegos olímpicos, aunque sin levantar ninguna de las restricciones deportivas dentro del propio país.</strong> <cite>Ali Al-Ahmed</cite>, un experto saudí que ha publicado estudios sobre deportes de mujeres en Arabia Saudí para el Instituto del Golfo, sostiene que <q cite="https://es.insider.pro/analytics/2016-08-09/ser-mujer-deportista-arabia-saudi/">La presencia de las mujeres atletas [en los Juegos Olímpicos de 2012] empeoró las cosas, porque le permitió Arabia Saudí escapar de las críticas. Fue una hoja de parra. Hicieron esto para la comunidad internacional</q>.</p>
+					<p>Un estudio de 2015 halló que las mujeres saudíes tenían el segundo nivel más alto de inactividad física de 38 países musulmanes, con el 73,1% de las mujeres saudíes siendo físicamente inactivas. El impacto de esto es evidente en el hecho de que el 70% de los adultos saudíes son obesos o tienen sobrepeso, y las mujeres los son de manera desproporcionada (los hombres representan el 26% de la población obesa, y las mujeres el 44%). <q cite="https://es.insider.pro/analytics/2016-08-09/ser-mujer-deportista-arabia-saudi/"><strong>Esta prohibición de los deportes y un estilo de vida activo en la mujer es la más devastadora de las restricciones, ya que afecta directamente a su salud</strong>, lo cual tiene un impacto en todo lo demás (su educación, su vida familiar, y su salud mental)</q>, dice <cite>Al-Ahmed</cite>. Él aboga por medidas radicales, como animar al <abbr title="Comité Olímpico Internacional">COI</abbr> a prohibirle a Arabia Saudí participar en los Juegos Olímpicos hasta se les conceda a las mujeres del país el mismo acceso a la participación atlética.</p>
+					<p><q cite="http://www.playgroundmag.net/sports/Arabia-Saudi-colegios-educacion-deportiva_0_1963603652.html">Muchas familias ven el deporte como un lujo que no se necesita, mientras que varias lo consideran un fenómeno extraterrestre que sólo puede traer problemas. Necesitamos cambiar la manera con la que las familias observan el deporte en las mujeres y ayudarles a apreciar su papel en la construcción de nuestro carácter y en proporcionar a nuestros cuerpos la fuerza que necesitan</q>, asegura <cite>Sarah Attar</cite>, la primera competidora saudí de atletismo, quien cumplió un papel muy importante en los Juegos Olímpicos de Londres en el 2012.</p>
+					<p>Pero las mujeres saudíes no se resignan y continúan luchando para, algún día, tener los mismos derechos que los hombres. Por supuesto no sólo en lo que al deporte respecta. Éste es solamente uno de los ámbitos de la vida cotidiana en los que las mujeres son marginadas y limitadas. <em>Pero cada vez más las mujeres de Arabia se hacen escuchar por la comunidad internacional y avanzan en su incansable búsqueda por la igualdad.</em></p>
+				</div>
+				</div>
+			</article>
+		</section>
+		<section id="notas"> <!--Sección "notas" que contiene un conjunto de articles para las notas periodísticas de la página-->
+			<h2>NOTAS</h2>
+			<article>
+				<!--Cada article es un contenido relacionado pero independiente que tendrá su propio encabezado h1 anunciando el tema a tratar-->
+				<figure>
+					<img src="resources/img/article1_220.jpg" alt="Fotografía de la dirigente de ONU Mujeres"/>
+				</figure>
+				<div>
+					<h3>En el deporte y la igualdad de género, una victoria lleva a la otra</h3>
+					<p>ONU Mujeres, el <abbr title="Comité Olímpico Internacional">COI</abbr> y Always se unen para celebrar el programa deportivo comunitario destinado a fomentar las habilidades de liderazgo y la confianza en sí mismas de las adolescentes.</p>
+					<p><a href="http://www.unwomen.org/es/news/stories/2016/8/press-release-in-sport-and-for-gender-equality-one-win-leads-to-another">Leer más</a></p>
+				</div>
+			</article>
+			<article>
+				<figure>
+					<img src="resources/img/article2_220.jpg" alt="Fotografía de Toti Fernández"/>
+				</figure>
+				<div>
+					<h3>'Toti' Fernández busca ayudar a las mujeres a través del deporte</h3>
+					<p>El deporte por años ha sido el motor de cambio para Mónica "Toti" Fernández, la primera mujer guatemalteca en terminar un ironman, el de Hawái 1997.</p>
+					<p><a href="http://www.prensalibre.com/deportes/deporte-nacional/-toti--fernandez-busca-ayudar-a-las-mujeres-a-traves-del-deporte">Leer más</a></p>
+				</div>
+			</article>
+			<article>
+				<figure>
+					<img src="resources/img/article3_220.jpg" alt="Fotografía de Selma Palacín jugando fúbtol"/>
+				</figure>
+				<div>
+					<h3>Selma Palacín gana el Premio Mujer y Deporte</h3>
+					<p>Concedido por la Sociedad Municipal Zaragoza Deporte, este premio pretende visibilizar el deporte femenino y promocionar las mejores acciones en materia de igualdad de oportunidades.</p>
+					<p><a href="http://www.heraldo.es/noticias/aragon/zaragoza-provincia/zaragoza/2017/05/17/concedido-premio-mujer-deporte-selma-palacin-zaragoza-cff-reto-femenino-10k-1176035-301.html">Leer más</a></p>
+				</div>
+			</article>
+			<article>
+				<figure>
+					<img src="resources/img/article4_220.jpg" alt="Fotografía de un equipo saudita de basketball femenino"/>
+				</figure>
+				<div>
+					<h3>Arabia Saudita: el deporte como medio para promover los derechos de las mujeres</h3>
+					<p>Optimista en cuanto a la evolución de la condición de la mujer en su país, Lina al-Maeena es la fundadora del equipo de Basket Ball Jeddah United, que comprende equipos tanto de hombres como de mujeres.</p>
+					<p><a href="http://mx.blastingnews.com/mundo/2017/05/arabia-saudita-el-deporte-como-medio-para-promover-los-derechos-de-las-mujeres-001686203.html">Leer más</a></p>
+				</div>
+			</article>
+			<article>
+				<figure>
+					<img src="resources/img/article5_220.jpg" alt="Fotografía de una de las mujeres españolas ganadoras de medallas de los Juegos Olímpicos Londres 2012"/>
+				</figure>
+				<div>
+					<h3>Día Internacional de la Mujer: España brilla en el deporte femenino mundial tras años de lucha</h3>
+					<p>El 'boom' del deporte femenino en España -las mujeres han ganado más medallas que los hombres en los dos últimos Juegos Olímpicos- sirve de excusa para recordar a las pioneras que pusieron los cimientos en condiciones más difíciles.</p>
+					<p><a href="http://ecodiario.eleconomista.es/deportes/noticias/8206867/03/17/Dia-Internacional-de-la-Mujer-Espana-brilla-en-el-deporte-femenino-mundial-tras-anos-de-lucha.html">Leer más</a></p>
+				</div>
+			</article>
+		</section>
+	</main>
+	<footer id="contacto">
+		<div class="item-wrapper">
+			<aside>
+				<h1>CONTÁCTENOS</h1>
+				<form>
+					<label>Nombre*<input type="text" name="nombre" value="" required /></label>
+					<label>Apellido*<input type="text" name="apellido" value="" required /></label>
+					<label>Correo electrónico*<input type="email" name="email" value="" required /></label>
+					<label>Teléfono o celular<input type="tel" name="telefono" value="" /></label>
+					<label>Mensaje<textarea name="mensaje" rows="8" maxlength="250"></textarea></label>
+					<div>
+						<input class="button" type="reset" value="RESET" />
+						<input class="button" type="submit" value="ENVIAR" />
+					</div>
+				</form>
+			</aside>
+		</div>
+		<div class="item-wrapper">
+			<aside id="redes">
+				<h1>REDES SOCIALES</h1>
+				<ul>
+					<li><a id="facebook" href="https://www.facebook.com/">Facebook</a></li>
+					<li><a id="twitter" href="https://twitter.com/">Twitter</a></li>
+					<li><a id="google" href="https://www.google.com.ar/">Google +</a></li>
+					<li><a id="youtube" href="https://www.youtube.com/">Youtube</a></li>
+					<li><a id="instagram" href="https://www.instagram.com/?hl=es">Instagram</a></li>
+				</ul>
+			</aside>
+		<!-- 	<aside id="info-contacto">
+			    <h1>INFORMACIÓN DE CONTACTO</h1>
+			    <ul>
+			        <li>Alumn</li>
+			        <li>Materia: Interacción con Dispositivos Móviles</li>
+			        <li>Turno: noche</li>
+			        <li>Comisión: 2A</li>
+			        <li>Año: 2017</li>
+			    </ul>
+			</aside> -->
+		</div>
+	</footer>
+</div>
+</body>
+</html>

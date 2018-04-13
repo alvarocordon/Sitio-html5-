@@ -1,0 +1,581 @@
+@charset "utf-8";
+@import url('../fonts/stylesheet.css');
+@import url('reset.css');
+/* CSS Document */
+/*El primer quiebre del media va a ser a los 934px*/
+body{
+	background-color: #111010;
+	font-family: 'bentonsansregular', Arial, sans-serif;
+	color: #111010;
+}
+
+#container{
+	max-width: 1024px; /*punto de inflexión del primer break point*/
+	margin: 0 auto;
+}
+
+.left{
+	float: left;
+}
+
+.right{
+	float: right;
+}
+
+h1, h2, h3, h4{
+	font-family: 'bentonsansmedium', Arial, sans-serif;
+}
+
+#logo{
+	text-indent: -1000px;
+	overflow: hidden;
+	background: url(../img/mdemujer_logo.png) no-repeat;
+	height: 163px; /*width y height exactos del logo*/
+	width:176px;
+}
+
+header{
+	display:flex;
+	margin: 0 auto;
+	padding: 1.875em 0 2.5em 0;
+	width: 90%;
+	justify-content: space-between;
+	align-items:flex-end;
+}
+
+nav{
+    
+	flex:0 0 56.5%;
+	margin-bottom:.3em;
+}
+
+#iconos{
+	display: none;
+}
+
+#botones{
+	display: flex;
+	text-align: center;
+}
+
+#botones li{
+	background-color: #E81538;
+	margin-left: .25em;
+	width: 25%;
+	-webkit-transform: scale(1); 
+	-moz-transform: scale(1);
+	-o-transform: scale();
+	-ms-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: all 200ms ease-in;
+	-moz-transition: all 200ms ease-in;
+	-o-transition: all 200ms ease-in;
+	transition: all 200ms ease-in;
+}
+
+#botones li a{
+	text-decoration: none;
+	display: block;
+	color: #EFDFDF;
+	padding: .875em 0;
+}
+
+#botones li:hover{
+	font-family: 'bentonsansmedium', Arial, sans-serif;
+	text-shadow:0 0 .2em #fff;
+	box-shadow: 0 0 3em #000000;
+    z-index: 2;
+	-webkit-transform: scale(1.2);
+	-moz-transform: scale(1.2);
+	-o-transform: scale(1.2);
+	-ms-transform: scale(1.2);
+	transform: scale(1.2);
+}
+
+#inicio{
+	background: url(../img/inicio_icono.png) no-repeat;
+	background-position: 1.25em .6875em;
+	text-indent: 1.5625em;
+}
+
+main{
+	background-color: #EFDFDF;
+	padding: 1.25em 0;
+}
+
+section{
+	width: 90%;
+}
+
+#banner{
+	text-align: center;
+	margin: 1.75em auto;
+	overflow: hidden;
+	max-height: 414px; /*Alto exacto de las imágenes del banner*/
+	/*Para hacer un banner responsive, he utilizado código jquery que toma, en cada evento resize, el height de la imagen que contiene y le asigna el mismo valor al height de la section #banner. Así se me aseguro que nunca vaya a verse ninguna parte de la imagen de los li anteriores o posteriores*/
+}
+
+#banner ul{
+	-moz-animation: pasar 15s infinite 0s ease;
+	-webkit-animation: pasar 15s infinite 0s ease;
+	animation: pasar 15s infinite 0s ease;
+	position: relative;
+}
+
+#banner ul li{
+	line-height:0;
+	opacity:0;
+}
+
+/*Empieza el delay de los li para sincronizar su aparición y desaparición del banner*/
+#uno{ -moz-animation: opacidad 15s infinite -0.5s ease-in-out;
+	  -webkit-animation: opacidad 15s infinite -0.5s ease-in-out;
+	  animation: opacidad 15s infinite -0.5s ease-in-out;
+}
+
+#dos{ -moz-animation: opacidad 15s infinite 2.5s ease-in-out;
+	  -webkit-animation: opacidad 15s infinite 2.5s ease-in-out;
+	  animation: opacidad 15s infinite 2.5s ease-in-out;
+}
+
+#tres{ -moz-animation: opacidad 15s infinite 5.5s ease-in-out;
+	  -webkit-animation: opacidad 15s infinite 5.5s ease-in-out;
+	  animation: opacidad 15s infinite 5.5s ease-in-out;
+}
+
+#cuatro{ -moz-animation: opacidad 15s infinite 8.5s ease-in-out;
+	  -webkit-animation: opacidad 15s infinite 8.5s ease-in-out;
+	  animation: opacidad 15s infinite 8.5s ease-in-out;
+}
+
+#cinco{ -moz-animation: opacidad 15s infinite 11.5s ease-in-out;
+	  -webkit-animation: opacidad 15s infinite 11.5s ease-in-out;
+	  animation: opacidad 15s infinite 11.5s ease-in-out;
+}
+/*Termina el delay de los li para el banner*/
+
+#banner picture{
+	max-width: 100%;
+}
+
+#banner img{
+	max-width: 100%;
+}
+
+/*Keyframes para la animación del ul*/
+/*Las imágenes del ul (es decir, del banner) se muestran en forma inversa al orden en el que fueron incluidas en el html (de hecho, el li id="banner1" es el último de la lista de list-items.
+La animación total durará 15 s. Ya que quiero que las imágenes se desplacen de arriba hacia abajo, la animación comienza por llevar el último (primer) li arriba de todo (bottom: 400%), comenzando el desplazamiento hacia abajo a los 1.8s (12%) y completando el movimiento a los 3s (20%), y así sucesivamente cada 1.8s y 3s, respectivamente.*/
+@keyframes pasar{
+	0%{ bottom:400%; }
+	12%{ bottom:400%; }
+	20%{ bottom:300%; }
+	32%{ bottom:300%; }
+	40%{ bottom:200%; }
+	52%{ bottom:200%; }
+	60%{ bottom:100%; }
+	72%{ bottom:100%; }
+	80%{ bottom:0; }
+	92%{ bottom:0; }
+	100%{ bottom:400%; }
+}
+
+/*Keyframes para la animación de los li*/
+/*La animación durará 15 segundos para cada li: los li tienen asignado un valor de opacity 0. La animación comienza llevando a cada li del 0% de opacidad al 1% en 0.6s (4%). Luego los mantiene en ese estado durante 1.5s (14%), para que puedan ser visualizados por el usuario, y entre los 1.5s y los 3s cada li comienza a desaparecer (animación que coincide con el desplazamiento del ul hacia abajo, dando la sensación de que el li se está yendo, desplazándose y desapareciendo a la vez). Durará desaparecido el resto de la animación hasta completar los 15 segundos (100%) y luego volverá a iniciar el loop*/
+@keyframes opacidad{
+	0% { opacity: 0; }
+	4% { opacity: 1; }
+	14%{ opacity: 1; }	
+	20%{ opacity: 0; }	
+	100% {opacity: 0; } /*Visualmente, incluir la opacidad 0 a los 100% de la animación no sería necesario, pero lo incluyo por cuestiones de prolijidad y legibilidad del código*/
+}
+
+section > h2{
+	color: #E81538;
+	padding: 1.25em;
+}
+
+article{
+	background-color: #CFC4C4;
+	overflow: auto;
+	margin: 0 1.25em;
+	padding: 1.25em;
+}
+
+article a{
+	color: #E81538;
+}
+
+#noticias, #notas{
+	background-color: #AEA6A8;
+	margin: 1.25em auto;
+	padding-bottom: 1.25em;
+}
+
+#noticias article h3{
+	font-size: 2.1em;
+}
+
+#noticias article h4{
+	font-size: 1.3em;
+	margin-top: .5em;
+}
+
+.media-wrapper{
+	box-sizing: border-box;
+	margin: 0 0 .9375em 1.875em;
+	width: 40%;
+	display: flex;
+	flex-direction: column;
+}
+
+.media{
+	box-sizing: border-box;
+	width: 100%;
+	text-align: center;
+}
+
+.video{
+	margin-bottom: 4.5em;
+}
+
+iframe{
+	border: none;
+}
+
+.media figure{
+	width: 48%;
+	max-width: 158px; /*width exacto de las img insertadas*/
+}
+
+.media figure img{
+	width: 100%;
+}
+
+figcaption{
+	font-size: .8em;
+	margin: 1em 0;
+}
+
+#noticias p{
+	margin-top: .9375em;
+}
+
+#noticias p:first-of-type{
+	margin-top: 1.875em;
+}
+
+#notas article{
+	display: flex;
+}
+
+#notas article:not(:last-of-type){
+	margin-bottom: .9375em;
+}
+
+#notas article img{
+	width: 100%;
+}
+
+#notas article figure{
+	width: 40%;
+	max-width: 220px; /*Alto exacto de la imagen que contiene*/
+}
+
+#notas article div{
+	margin-left: 1.25em;
+	width: 60%;
+}
+
+#notas article h3{
+	font-size: 1.25em;
+}
+
+#notas h3 + p{
+	font-size: 1em;
+	margin: .5em 0 .9em 0;
+	font-family: 'bentonsansregular', Arial, sans-serif;
+}
+
+#notas a{
+	background: url(../img/vermas_icono.png) no-repeat;
+	padding: .2em 0 .2em 1.7em;
+}
+
+footer{
+	width: 90%;
+	margin: 1.25em auto;
+	color: #EFDFDF;
+	display: flex;
+	justify-content: space-between;
+}
+
+.item-wrapper{
+	width: 48%;
+}
+
+footer h1{
+	padding: 1.25em 0;
+}
+
+/*////////// ESTILOS PARA EL FORMULARIO //////////*/
+
+form label{
+	display: block;
+	margin-bottom: 1em;
+	font-size: .9em;
+}
+
+form input:not(.button), form textarea{
+	box-sizing: border-box;
+	display: block;
+	width: 100%;
+	background-color: #3D3B3C;
+	padding: .625em;
+	margin-top: .45em;
+}
+
+form input:not(.button):focus, form textarea:focus{
+	background-color: #876E73;
+}
+
+form div{
+	display: flex;
+	justify-content: flex-end;
+}
+
+.button{
+	box-sizing: border-box;
+	height: 2.6em;
+	font-size: 1em;
+	padding: .5em 0;
+	margin: 1em 0;
+	color: #EFDFDF;
+	background-color: #E81538;
+	cursor: pointer;
+}
+
+/* Para lograr efecto de que el boton se aprieta */
+.button:active{
+	position: relative;
+	top: .2em;
+	left: .25em;
+	-moz-box-shadow: .25em .3em .6em #000;
+	-webkit-box-shadow: .25em .3em .35em #000;
+	box-shadow: .25em .3em .35em #000;
+}
+
+input[type=submit]{
+	width: 30%;
+	margin-left: .5em;
+}
+
+input[type=reset]{
+	text-indent: -1000px;
+	overflow: hidden;
+	width: 10%;
+	background: #E81538 url(../img/reset_icono.png) no-repeat;
+	background-position: center center;
+}
+
+/*////////// ESTILOS PARA LAS REDES SOCIALES //////////*/
+
+#redes ul{
+	display: flex;
+	justify-content: flex-start;
+}
+
+#redes ul li{
+	width: 10%;
+	margin-right: .5em;
+}
+
+#redes li a{
+	text-indent: -1000px;
+	overflow: hidden;
+	display: block;
+	box-sizing: border-box;
+	height: 2.6em;
+	padding: .5em 0;
+}
+
+#facebook{
+	background: #E81538 url(../img/facebook_icon.png) no-repeat;
+	background-position: center center;
+}
+
+#twitter{
+	background: #E81538 url(../img/twitter_icon.png) no-repeat;
+	background-position: center center;
+}
+
+#google{
+	background: #E81538 url(../img/google_icon.png) no-repeat;
+	background-position: center center;
+}
+
+#youtube{
+	background: #E81538 url(../img/youtube_icon.png) no-repeat;
+	background-position: center center;
+}
+
+#instagram{
+	background: #E81538 url(../img/instagram_icon.png) no-repeat;
+	background-position: center center;
+}
+
+/*////////// ESTILOS PARA INFO DE CONTACTO //////////*/
+
+#info-contacto{
+	margin-top: 2em;
+}
+
+#info-contacto ul{
+	list-style-type: disc;
+}
+
+#info-contacto ul li{
+	font-size: .9em;
+	margin-bottom: .45em;
+	margin-left: 1.1em;
+}
+
+
+/*//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// EMPIEZAN LOS MEDIA QUERY ////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+@media all and (max-width: 933px) {
+	header{ flex-direction: column; align-items: stretch; }
+	
+	nav{ flex: 0 0 100%; margin-top: 2em; margin-bottom: 0; }
+	
+	#inicio{ background-position: 22% .6875em; padding-left: 17%; }
+	
+	.media figure{ display: none; }
+	
+	.video{ margin-top: .7em; margin-bottom: 0; }
+	
+	.figcaption{ margin-bottom: 0; }
+	
+	.media-wrapper{ width: 100%; margin: 2em auto 0 auto; }
+	
+	#noticias article > div{ display: flex; flex-direction: column-reverse; }
+	
+	#redes ul li{ width: 15%; }
+	
+	input[type=reset]{ width: 15%; }
+	
+	input[type=submit]{ width: 40%; }
+}
+
+@media all and (max-width: 599px) {
+	
+	* { float: none; }
+	
+	body{ font-size: .85em }
+	
+	#logo{
+		background-size: 100%;
+		background-position: center top;
+		align-self: center;
+		width: 34.55vw;
+		max-width: 176px;
+		height: 32.04vw;
+	}
+	
+	#iconos{ display: block; }
+	
+	#botones{ flex-direction: column; align-items: stretch; }
+	
+	#botones li{ width: 100%; margin-bottom: 1em; }
+	
+	#inicio{ background-image: none; padding-left: 0; text-indent:0;}
+	
+	.media figure{ display: none; }
+	
+	.video{ margin-top: .7em; margin-bottom: 0; }
+	
+	.figcaption{ margin-bottom: 0; }
+	
+	.media-wrapper{ width: 100%; margin: 2em auto 0 auto; }
+	
+	#noticias article > div{ display: flex; flex-direction: column-reverse; }
+	
+	#noticias article h3{ font-size: 1.6em }
+	
+	#noticias article h4{ font-size: 1.2em }
+	
+	#noticias article p:nth-child(5), #noticias article p:last-of-type{ display: none; }
+	
+	#notas article{ flex-wrap: wrap; }
+	
+	#notas article figure{ width: 100%; }
+	
+	#notas article div{ margin-left: 0; margin-top: 1.25em; width: 100%; }
+	
+	#notas article h3{ font-size: 1.1em }
+	
+	footer{ justify-content: flex-start; flex-wrap: wrap; }
+	
+	.item-wrapper{ width: 100%; }
+	
+	.button{ margin-bottom: 0; }
+	
+	input[type=reset]{ width: 15%; }
+	
+	input[type=submit]{ width: 40%; }
+	
+	form div{ justify-content: flex-start; }
+	
+	#redes{ margin-top: 2em; }
+	
+	#redes ul li{ width: 15%; }
+	
+	#botones li{ transform: none; transition: none; }
+
+	#botones li:hover{
+		background-color: #EF7F76;
+		text-shadow:0 0 .2em #4F091A;
+		box-shadow: none;
+		transform: none;
+	}
+	
+	#botones li a:hover{ font-family: 'bentonsansregular', Arial, sans-serif; color: #4F091A; }
+	
+	#botones{ display: none; }
+	
+	nav{
+		position: absolute;
+		z-index: 1;
+		top: -1em;
+		left: 0;
+		box-sizing: border-box;
+		padding: 1.25em;
+	}
+	
+	#iconos li{ text-indent: -1000px; overflow: hidden;}
+	
+	#iconos li a{
+		display: block;
+		background: url(../img/menu.png) no-repeat center center;
+		width: 40px;
+		padding: .1em;
+		background-size: cover;
+	}
+	
+	header:target nav{
+		background-color: rgba(17, 16, 16, 0.9);
+		width: 100%;
+		height: 110%; /*Ya que el box-sizing: borderbox; sólo sirve para el width, debo aumentar el porcentaje del height*/
+		position: fixed;
+		margin-top: 0; 
+		padding-top: 3.25em;
+	}
+	
+	header:target #botones{ display: block; padding-bottom: 1em; position: relative; top: 1.875em;}
+	
+	header:target #iconos li:first-child{ display: none; }
+	
+	#iconos li:last-child { display: none; }
+	
+	header:target #iconos li:last-child{ display: block; }
+}

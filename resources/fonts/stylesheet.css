@@ -1,0 +1,17 @@
+@font-face {
+    font-family: 'bentonsansmedium';
+    src: url('bentonsans-medium.ttf') format('truetype'),
+    	 url('bentonsans-medium-webfont.woff2') format('woff2'),
+         url('bentonsans-medium-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'bentonsansregular';
+    src: url('bentonsans-regular.ttf') format('truetype'),
+    	 url('bentonsans-regular-webfont.woff2') format('woff2'),
+         url('bentonsans-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
